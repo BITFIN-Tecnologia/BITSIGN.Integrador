@@ -1,0 +1,12 @@
+root = true
+
+# All files
+[*]
+indent_style = space
+
+# Xml files
+[*.xml]
+indent_size = 2
+
+[*.cs]
+file_header_template = Copyright (c) 2023 - BITFIN Software Ltda. Todos os Direitos Reservados.\nCódigo exclusivo para consumo dos serviços (API's) da BITSIGN.
