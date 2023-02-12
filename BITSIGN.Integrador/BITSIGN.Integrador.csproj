@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="bin\Debug\net7.0\appsettings.json" />
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="BITSIGN.ico" />
   </ItemGroup>
 

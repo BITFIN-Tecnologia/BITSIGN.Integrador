@@ -8,48 +8,55 @@ namespace BITSIGN.Integrador
 {
     internal class Program
     {
-        const string Executavel = "BITSIGN.Integrador.exe";
+        const string Executavel = "BSI.exe";
         static readonly CultureInfo cultura = new("pt-BR");
 
         static async Task Main(string[] args)
         {
-            Setup.Configurar();
-
-            if (args?.Length > 0 && args[0].ToLower() is "?" or "ajuda")
+            if (Setup.Configurar())
             {
-                ExibirAjuda();
-            }
-            else
-            {
-                using (var log = new Logger())
+                if (args?.Length > 0 && args[0].ToLower() is "?" or "ajuda")
                 {
-                    foreach (var tarefa in Criar(args))
+                    ExibirAjuda();
+                }
+                else
+                {
+                    using (var log = new Logger())
                     {
-                        if (tarefa != null)
+                        foreach (var tarefa in Criar(args))
                         {
-                            var sucesso = true;
-                            log.Log(tarefa.Nome, $"Início da Tarefa");
+                            if (tarefa != null)
+                            {
+                                var sucesso = true;
+                                log.Log(tarefa.Nome, $"Início da Tarefa");
 
-                            try
-                            {
-                                await tarefa.Executar();
-                            }
-                            catch (Exception ex)
-                            {
-                                log.Log(tarefa.Nome, ex);
-                                sucesso = false;
-                            }
-                            finally
-                            {
-                                foreach (var l in tarefa.Logs)
-                                    log.Log(l);
+                                try
+                                {
+                                    await tarefa.Executar();
+                                }
+                                catch (Exception ex)
+                                {
+                                    log.Log(tarefa.Nome, ex);
+                                    sucesso = false;
+                                }
+                                finally
+                                {
+                                    foreach (var l in tarefa.Logs)
+                                        log.Log(l);
 
-                                log.Log(tarefa.Nome, sucesso ? "Executada com Sucesso" : "Falha na Execução", sucesso ? Logger.Informativo : Logger.Alerta);
-                                log.Log(tarefa.Nome, $"Fim da Tarefa");
+                                    log.Log(tarefa.Nome, sucesso ? "Executada com Sucesso" : "Falha na Execução", sucesso ? Logger.Informativo : Logger.Alerta);
+                                    log.Log(tarefa.Nome, $"Fim da Tarefa");
+                                }
                             }
                         }
                     }
                 }
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"O diretório raiz \"{Configuracoes.Paths.Dados}\" não foi localizado.");
+                Console.ReadLine();
             }
         }
 
