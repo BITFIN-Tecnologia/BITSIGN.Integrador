@@ -51,3 +51,10 @@ Uso:
         BSI.exe Retorno 00000000-0000-0000-0000-000000000000
 ```
 > A busca por arquivos assinados está, por padrão, fixada nos arquivos gerados no dia/hora (`DateTime.Now`) em que a ferramenta está sendo executada; caso precise de dias ou períodos específicos, parametrize a data desejada ao executar a ferramenta.
+
+> #### CONTATOS
+>
+> - Site: <https://bitsign.com.br>
+> - E-mail Técnico: <dev@bitfin.com.br>
+> - E-mail Comercial: <contato@bitsign.com.br>
+> - Telefone (+WhatsApp): +55 (19) 9.9901-1065
