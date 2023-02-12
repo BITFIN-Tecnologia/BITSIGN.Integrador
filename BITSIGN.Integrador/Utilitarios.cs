@@ -10,17 +10,15 @@ namespace BITSIGN.Integrador
 
         internal static string GerarNomeDeArquivo(string diretorioDeDestino, string nomeDoArquivoDeOrigem)
         {
+            var prefixo = Path.GetFileNameWithoutExtension(nomeDoArquivoDeOrigem);
+            var extensao = Path.GetExtension(nomeDoArquivoDeOrigem);
             var contador = 0;
             string? temp;
 
             do
             {
-                temp =
-                    Path.Combine(
-                        diretorioDeDestino,
-                        $"{Path.GetFileNameWithoutExtension(nomeDoArquivoDeOrigem)}-{++contador:000}{Path.GetExtension(nomeDoArquivoDeOrigem)}");
+                temp = Path.Combine(diretorioDeDestino, $"{prefixo}-{++contador:000}{extensao}");
             } while (File.Exists(temp));
-
 
             return temp;
         }
