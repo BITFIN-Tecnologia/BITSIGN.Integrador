@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ApplicationIcon>BITSIGN.ico</ApplicationIcon>
+    <AssemblyName>BSI</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
