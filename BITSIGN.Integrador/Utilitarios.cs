@@ -6,13 +6,23 @@ namespace BITSIGN.Integrador
     internal static class Utilitarios
     {
         internal static string SemQuebraDeLinha(this string valor) =>
-            valor.ToString().Replace(" ", Environment.NewLine);
+            valor.ToString().Replace(Environment.NewLine, " ");
 
         internal static string GerarNomeDeArquivo(string diretorioDeDestino, string nomeDoArquivoDeOrigem)
         {
-            var temp = "";
+            var contador = 0;
+            string? temp;
 
-            return Path.Combine(diretorioDeDestino, "");
+            do
+            {
+                temp =
+                    Path.Combine(
+                        diretorioDeDestino,
+                        $"{Path.GetFileNameWithoutExtension(nomeDoArquivoDeOrigem)}-{++contador:000}{Path.GetExtension(nomeDoArquivoDeOrigem)}");
+            } while (File.Exists(temp));
+
+
+            return temp;
         }
     }
 }
