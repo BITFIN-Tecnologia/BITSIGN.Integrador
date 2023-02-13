@@ -18,7 +18,7 @@ namespace BITSIGN.Integrador
                     .Build();
         }
 
-        internal class Paths : Configuracoes
+        internal class Paths
         {
             internal static string Dados => config["Paths:Dados"];
 
