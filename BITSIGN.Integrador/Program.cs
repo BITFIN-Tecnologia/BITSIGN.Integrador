@@ -79,18 +79,19 @@ namespace BITSIGN.Integrador
         {
             if (args?.Length > 0)
             {
-                if (args[0] == "Retorno")
+                if (string.Compare(args[0], "Retorno", true) == 0)
                 {
                     if (
+                        args.Length == 3 &&
                         DateTime.TryParseExact(args[1], "dd/MM/yyyy", cultura, DateTimeStyles.None, out var dataInicial) &&
                         DateTime.TryParseExact(args[2], "dd/MM/yyyy", cultura, DateTimeStyles.None, out var dataFinal))
                         return new(dataInicial, dataFinal);
-                    else if (Guid.TryParse(args[1], out var loteId))
+                    else if (args.Length == 2 && Guid.TryParse(args[1], out var loteId))
                         return new(loteId);
                 }
             }
 
-            return new(new(2021, 6, 14), new(2021, 6, 14));
+            return null;
         }
 
         private static void ExibirAjuda() =>
