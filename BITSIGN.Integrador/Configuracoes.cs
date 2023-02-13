@@ -7,7 +7,7 @@ namespace BITSIGN.Integrador
 {
     internal class Configuracoes
     {
-        protected static IConfiguration config;
+        private static IConfiguration config;
 
         static Configuracoes()
         {
