@@ -32,6 +32,8 @@ A partir deste diretório raiz, serão criados subdiretórios para organização
 |---- Retornos
 |---- Logs
 ```
+> O diretório *Logs* armazenará os logs de execução, gerando um arquivo por dia, no formato **AAMMDD.txt**.
+
 Para executar a ferramenta, você poderá utilizar um dos parâmetros que se pode ver a seguir. Basicamente, se precisa sincronizar, que é onde os arquivos são enviados e aqueles que estiverem disponíveis são baixados, basta omitir os parâmetros. Se desejar executar uma ação específica (`Remessa` ou `Retorno`), basta informar o parâmetro ao executar.
 ```
 BITSIGN.Integrador
@@ -51,6 +53,9 @@ Uso:
         BSI.exe Retorno 00000000-0000-0000-0000-000000000000
 ```
 > A busca por arquivos assinados está, por padrão, fixada nos arquivos gerados no dia/hora (`DateTime.Now`) em que a ferramenta está sendo executada; caso precise de dias ou períodos específicos, parametrize a data desejada ao executar a ferramenta.
+
+### Execução Periódica
+Alternativamente poderá agendar este executável para que ele seja executado periodicamente. Caso precise disso, pode recorrer à recursos nativos do próprio sistema operacional (como as Tarefas do Windows), para que se configure o período e a quantidade de repetições necessárias.
 
 > #### CONTATOS
 >
