@@ -8,7 +8,8 @@ namespace BITSIGN.Integrador
 {
     internal abstract class Tarefa
     {
-        protected readonly static ProxyDoServico proxy = new(new(new AppSettingsJson()));
+        private readonly static AppSettingsJson config = new();
+        protected readonly static ProxyDoServico proxy = new(config.Conexoes.First());
         private readonly IList<Logger.Registro> logs = new List<Logger.Registro>();
 
         protected Tarefa(string nome) =>
