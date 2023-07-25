@@ -10,14 +10,17 @@ Antes de utilizar a ferramenta, é necessário é informar as configurações at
 ```json
 {
   "BITSIGN.Proxy": {
-    "Conexao": {
-      "Ambiente": "Sandbox",
-      "Versao": "v1",
-      "CodigoDoContratante": "c7efea7b-5040-4956-9d11-755dbeaddf5a",
-      "ChaveDeIntegracao": "CHAVE-FORNECIDA-PELO-SERVIÇO-DA-BITSIGN",
-      "FormatoDeSerializacao": "Json",
-      "Timeout": "00:00:30"
-    }
+    "Conexoes": [
+      {
+        "Nome": "App de Teste",
+        "Ambiente": "Sandbox",
+        "Versao": "v1",
+        "CodigoDoContratante": "c7efea7b-5040-4956-9d11-755dbeaddf5a",
+        "ChaveDeIntegracao": "CHAVE-FORNECIDA-PELO-SERVIÇO-DA-BITSIGN",
+        "FormatoDeSerializacao": "Json",
+        "Timeout": "00:00:30"
+      }
+    ]
   },
   "Paths": {
     "Dados": "C:\\Temp\\Teste"
