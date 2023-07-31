@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BITFIN.BITSIGN.Proxy" Version="1.1.0.19" />
+    <PackageReference Include="BITFIN.BITSIGN.Proxy" Version="1.1.0.22" />
   </ItemGroup>
 
 </Project>
