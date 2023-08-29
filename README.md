@@ -60,6 +60,8 @@ Uso:
 ### Execução Periódica
 Alternativamente poderá agendar este executável para que ele seja executado periodicamente. Caso precise disso, pode recorrer à recursos nativos do próprio sistema operacional (como as Tarefas do Windows), para que se configure o período e a quantidade de repetições necessárias.
 
+---
+
 > #### CONTATOS
 >
 > - Site: <https://bitsign.com.br>
