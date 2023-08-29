@@ -2,7 +2,7 @@
 ###### Envio e Recebimentos de documentos para assinatura.
 Utilitário para envio e recebimentos de pacotes para assinatura. Pode ser utlizado por aplicações que não desejam interagir com as API's da BITSIGN, e que utilizam diretórios para disponibilizar os arquivos para assinatura ou capturar os arquivos assinados. A responsabilidade da aplicação passa a ser somente a geração e o processamento destes arquivos, uma vez que este utilitário conecta e faz o envio dos arquivos para a BITSIGN através das API's.
 
-O pacote consite em um arquivo ZIP, contendo o manifesto (que pode ser um arquivo XML ou JSON) que contém todas as instruções para coletar as assinaturas, bem como a relação de todos os documentos que precisam ser assinados. A seguir está os link que aponta para a documentação e que dá maiores detalhes sobre a estruturação deste pacote:
+O pacote consiste em um arquivo ZIP, contendo o manifesto (que pode ser um arquivo XML ou JSON) que contém todas as instruções para coletar as assinaturas, bem como a relação de todos os documentos que precisam ser assinados. A seguir está o link que aponta para a documentação e que dá maiores detalhes sobre a estruturação deste pacote:
 
 > Pacote ZIP: [https://bitsign.com.br/documentacao#integracaoPacotes](https://bitsign.com.br/documentacao#integracaoPacotes)
 
@@ -27,7 +27,7 @@ Antes de utilizar a ferramenta, é necessário é informar as configurações at
   }
 }
 ```
-A partir deste diretório raiz, serão criados subdiretórios para organização dos arquivos, onde os arquivos gerados por outras aplicação para envio, deverão ser colocados no diretório `Remessas` e, quando ele foi enviado ao serviço, a ferramenta moverá o arquivo para o subdiretório `Enviadas`. Quando novos arquivos estiverem disponíveis, ao realizar a download, ele será armazenado no subdiretório `Retornos`, que é onde as aplicações deverão monitorar para processamento. Por fim, todas as execuções são registradas e armazenadas em arquivos de logs diários no subdiretório `Logs`.
+A partir deste diretório raiz, serão criados subdiretórios para organização dos arquivos, onde os arquivos gerados por outras aplicações para envio, deverão ser colocados no diretório `Remessas` e, quando ele foi enviado ao serviço, a ferramenta moverá o arquivo para o subdiretório `Enviadas`. Quando novos arquivos estiverem disponíveis, ao realizar a download, ele será armazenado no subdiretório `Retornos`, que é onde as aplicações deverão monitorar para processamento. Por fim, todas as execuções são registradas e armazenadas em arquivos de logs diários no subdiretório `Logs`.
 ```
 * C:\Temp\Teste
 |---- Remessas
