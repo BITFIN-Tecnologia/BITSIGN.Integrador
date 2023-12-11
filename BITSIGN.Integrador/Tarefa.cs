@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 - BITFIN Software Ltda. Todos os Direitos Reservados.
+﻿// Copyright (c) 2023 - BITFIN Tecnologia Ltda. Todos os Direitos Reservados.
 // Código exclusivo para consumo dos serviços (API's) da BITSIGN.
 
 using BITSIGN.Proxy;
